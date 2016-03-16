@@ -1,0 +1,25 @@
+{
+  "name": "i-lateral/silverstripe-checkout-stripe",
+  "description": "Silverstripe module that add's Stripe payment integration to the checkout module",
+    "type": "silverstripe-module",
+    "homepage": "http://github.com/i-lateral/silverstripe-checkout-stripe",
+    "keywords": ["silverstripe", "commerce", "ecommerce", "checkout", "shopping", "cart", "stripe"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Morven Lewis-Everley",
+            "email": "morven@i-lateral.com"
+        }
+    ],
+    "support": {
+        "issues": "http://github.com/i-lateral/silverstripe-checkout-sofort/issues"
+    },
+    "require": {
+        "silverstripe/framework": ">=3.1",
+        "i-lateral/silverstripe-checkout": "*",
+        "stripe/stripe-php": "v3.*",
+    },
+    "extra": {
+        "installer-name": "checkout-stripe"
+    }
+}
