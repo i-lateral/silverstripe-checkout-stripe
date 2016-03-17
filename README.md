@@ -25,7 +25,7 @@ Add all four these via Silverstripe config:
 
 ### YML
 
-    StripPayment:
+    StripePayment:
       test_secret_key: test_xyz
       test_publish_key: test_xyz
       live_secret_key: live_xyz
@@ -33,10 +33,10 @@ Add all four these via Silverstripe config:
       
 ### PHP
 
-    StripPayment::config()->test_secret_key = "test_xyz";
-    StripPayment::config()->test_publish_key = "test_xyz";
-    StripPayment::config()->live_secret_key = "live_xyz";
-    StripPayment::config()->live_publish_key = "live_xyz";
+    StripePayment::config()->test_secret_key = "test_xyz";
+    StripePayment::config()->test_publish_key = "test_xyz";
+    StripePayment::config()->live_secret_key = "live_xyz";
+    StripePayment::config()->live_publish_key = "live_xyz";
 
 Now enable the stripe payment by logging into the CMS then visiting
 global site settings.
