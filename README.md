@@ -18,7 +18,29 @@ project root.
 
 ## Setup
 
-Once installed, go to global site settings, then the "Checkout" tab.
+Once installed you will need to add your API Keys (found in Stripe under
+"Account Settings").
 
-Under payment methods, click "Add" and then select "Stripe" from the
-dropdown.
+Add all four these via Silverstripe config:
+
+### YML
+
+    StripPayment:
+      test_secret_key: test_xyz
+      test_publish_key: test_xyz
+      live_secret_key: live_xyz
+      live_publish_key: live_xyz
+      
+### PHP
+
+    StripPayment::config()->test_secret_key = "test_xyz";
+    StripPayment::config()->test_publish_key = "test_xyz";
+    StripPayment::config()->live_secret_key = "live_xyz";
+    StripPayment::config()->live_publish_key = "live_xyz";
+
+Now enable the stripe payment by logging into the CMS then visiting
+global site settings.
+
+Now click the "Checkout" tab and under payment methods click "Add".
+
+Now then select "Stripe" from the dropdown.
