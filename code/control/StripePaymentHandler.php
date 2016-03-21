@@ -152,12 +152,10 @@ class StripePaymentHandler extends PaymentHandler
                 
                 return $this->redirect($success_url);
                 
-            } catch(\Stripe\Error\Card $e) {
+            } catch(Exception $e) {
                 $order->Status = "failed";
                 $order->write();
                 
-                return $this->redirect($error_url);
-            } finally {
                 return $this->redirect($error_url);
             }
         } else {
