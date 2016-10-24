@@ -1,0 +1,6 @@
+en:
+  CheckoutStripe:
+    PayWithCard: 'Pay with credit/debit card via Stripe'
+  StripePayment:
+    PLURALNAME: 'Stripe Payments'
+    SINGULARNAME: 'Stripe Payment'
