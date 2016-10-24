@@ -138,7 +138,7 @@ class StripePaymentHandler extends PaymentHandler
                 );
                 
                 $charge = StripeCharge::create(array(
-                    "amount" => round($cart->TotalCost * 100),
+                    "amount" => round($order->Total->Value * 100),
                     "currency" => strtolower(Checkout::config()->currency_code),
                     "source" => $token,
                     "metadata" => array("Order" => $order_no)
