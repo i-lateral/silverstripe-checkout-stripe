@@ -122,7 +122,7 @@ class StripePaymentHandler extends PaymentHandler
         
         $order_no = Session::get("StripePayment.OrderNumber");
         
-        $order = Order::get()
+        $order = Estimate::get()
             ->filter("OrderNumber", $order_no)
             ->first();
         
@@ -144,12 +144,15 @@ class StripePaymentHandler extends PaymentHandler
                     "metadata" => array("Order" => $order_no)
                 ));
                 
+                $order->convertToOrder();
+                $order->write();
+
+                $order = Order::get()->byID($order->ID);
                 $order->Status = "paid";
                 $order->PaymentProvider = "Stripe";
                 $order->PaymentNo = $charge->id;
-                
                 $order->write();
-                
+
                 return $this->redirect($success_url);
                 
             } catch(Exception $e) {
